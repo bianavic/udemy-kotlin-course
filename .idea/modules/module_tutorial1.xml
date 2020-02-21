@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="module_tutorial1" default="compile.module.tutorial1">
+  <dirname property="module.tutorial1.basedir" file="${ant.file.module_tutorial1}"/>
+  
+  <property name="module.jdk.home.tutorial1" value="${project.jdk.home}"/>
+  <property name="module.jdk.bin.tutorial1" value="${project.jdk.bin}"/>
+  <property name="module.jdk.classpath.tutorial1" value="${project.jdk.classpath}"/>
+  
+  <property name="compiler.args.tutorial1" value="-encoding UTF-8 -source 8 -target 8 ${compiler.args}"/>
+  
+  <property name="tutorial1.output.dir" value="${module.tutorial1.basedir}/../../out/production/Tutorial1"/>
+  <property name="tutorial1.testoutput.dir" value="${module.tutorial1.basedir}/../../out/test/Tutorial1"/>
+  
+  <path id="tutorial1.module.bootclasspath">
+    <!-- Paths to be included in compilation bootclasspath -->
+  </path>
+  
+  <path id="tutorial1.module.production.classpath">
+    <path refid="${module.jdk.classpath.tutorial1}"/>
+  </path>
+  
+  <path id="tutorial1.runtime.production.module.classpath">
+    <pathelement location="${tutorial1.output.dir}"/>
+  </path>
+  
+  <path id="tutorial1.module.classpath">
+    <path refid="${module.jdk.classpath.tutorial1}"/>
+    <pathelement location="${tutorial1.output.dir}"/>
+  </path>
+  
+  <path id="tutorial1.runtime.module.classpath">
+    <pathelement location="${tutorial1.testoutput.dir}"/>
+    <pathelement location="${tutorial1.output.dir}"/>
+  </path>
+  
+  
+  <patternset id="excluded.from.module.tutorial1">
+    <patternset refid="ignored.files"/>
+  </patternset>
+  
+  <patternset id="excluded.from.compilation.tutorial1">
+    <patternset refid="excluded.from.module.tutorial1"/>
+  </patternset>
+  
+  
+  <target name="compile.module.tutorial1" depends="compile.module.tutorial1.production,compile.module.tutorial1.tests" description="Compile module Tutorial1"/>
+  
+  <target name="compile.module.tutorial1.production" depends="register.custom.compilers" description="Compile module Tutorial1; production classes"/>
+  
+  <target name="compile.module.tutorial1.tests" depends="register.custom.compilers,compile.module.tutorial1.production" description="compile module Tutorial1; test classes" unless="skip.tests"/>
+  
+  <target name="clean.module.tutorial1" description="cleanup module">
+    <delete dir="${tutorial1.output.dir}"/>
+    <delete dir="${tutorial1.testoutput.dir}"/>
+  </target>
+</project>
