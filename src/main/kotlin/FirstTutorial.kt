@@ -1,10 +1,18 @@
-fun main(args: Array<String>) {
-    // var = mutable
-    // val = immutable
-    var question1 = 12%5
-    question1 = question1 + 2 // == question1 = 12%5 + 2
+fun main(args: Array<String>) { // type is string Array<String>
 
-    val question2 = 10*5
+/*    val name = "maria"
+    val str = "hello $name"
+    println(str)*/
 
-    println((question1)+question2) // fun name + arguments
+    val number: Int = 2
+    val decimalNumber: Double = 10.6
+    val floatNumber: Float = 10.6f
+
+    val answerDouble: Double = decimalNumber * 3
+    val answerFloat: Float = floatNumber * 3
+
+
+    println("Double: " + answerDouble)
+    println("Float: " +  answerFloat)
+
 }
