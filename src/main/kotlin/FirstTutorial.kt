@@ -2,17 +2,30 @@ fun main(args: Array<String>) { // type is string Array<String>
 
 /*    val name = "maria"
     val str = "hello $name"
-    println(str)*/
+    println(str)
 
-    val number: Int = 2
-    val decimalNumber: Double = 10.6
-    val floatNumber: Float = 10.6f
+    val number: int = 2
+    val decimalnumber: double = 10.6
+    val floatnumber: float = 10.6f
 
-    val answerDouble: Double = decimalNumber * 3
-    val answerFloat: Float = floatNumber * 3
+    val answerdouble: double = decimalnumber * 3
+    val answerfloat: float = floatnumber * 3
 
 
-    println("Double: " + answerDouble)
-    println("Float: " +  answerFloat)
+    println("double: " + answerdouble)
+    println("float: " +  answerfloat) */
+
+    print("What is your level of pain between 1 and 3?")
+    val number: Int = readLine()!!.toInt()
+
+    if(number == 1){
+        println("eh, you will be ok!")
+    } else if(number == 2) {
+        println("Are you ok?")
+    } else if(number == 3) {
+        println("you are dieing")
+    } else{
+        println("That is not between 1 and 3")
+    }
 
 }
