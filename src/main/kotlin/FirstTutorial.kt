@@ -1,18 +1,13 @@
 fun main(args: Array<String>) { // type is string Array<String>
 
-/*    val name = "maria"
-    val str = "hello $name"
-    println(str)*/
+    println("What ice cream would you like?")
+    val iceCream: String = readLine()!!
 
-    val number: Int = 2
-    val decimalNumber: Double = 10.6
-    val floatNumber: Float = 10.6f
-
-    val answerDouble: Double = decimalNumber * 3
-    val answerFloat: Float = floatNumber * 3
-
-
-    println("Double: " + answerDouble)
-    println("Float: " +  answerFloat)
+    if(iceCream == "Vanilla" || iceCream == "Banana") println("That'll be $1.20")
+    else if(iceCream == "Chocolate" || iceCream == "Strawberry") {
+        println("That'll be $2.00")
+    } else if(iceCream == "Cherry") {
+        println("That'll be $12.00!")
+    }
 
 }
