@@ -1,12 +1,7 @@
-fun main(args: Array<String>) { // type is string Array<String>
+fun main(args: Array<String>) {
+    val names = listOf<String>("Ted", "Billy", "Ryan")
+    println("name: " + names[0])
+    println("name: " + names.get(1))
+    println("Is list Empty?: " + names.isEmpty())
 
-    println("What ice cream would you like?")
-    val iceCream: String = readLine()!!
-
-    // use of WHEN =  only with equals, only 1 condition. (neither ||, neither >, <)
-    when(iceCream) {
-        "Vanilla" -> println("That'll be $1.20")
-        "Chocolate" -> println("That'll be $2.00")
-        "Cherry" -> println("That'll be $12.00!")
-    }
 }
