@@ -1,4 +1,7 @@
     fun main(args: Array<String>) {
+
+        // while loop = when you dont know how many times to loop over
+        // for loop = you know the number of elements because of the index
         val bestFriends = arrayListOf<String>("Ryan")
         var bestFriendInput: String = "Nothing"
         var deleteBestFriendInput: String = "Nothing"
