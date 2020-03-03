@@ -1,18 +1,13 @@
 fun main(args: Array<String>) {
-    val person1 = Person()
-    person1.name = "Ted"
 
-    val person2 = Person()
-    person2.name = "Ed"
+    val person: Person = Person()
+    println("beforeAction: ${person.action}")
+    person.doAction(PersonAction.BIKING)
+    println("afterAction: ${person.action}")
 
-    println("Person1 ${person1.name}")
-    println("Person2 ${person2.name}")
-
-    val newPerson = Person()
-    println("newPerson: " + newPerson.name)
-
-    SingletonPerson.name = "Ted"
-
-    println("singletonPerson: " + SingletonPerson.name)
-
+    if (person.action.equals(PersonAction.BIKING)) {
+        println("Yayy I'm biking!")
+    } else if(person.action.equals(PersonAction.WALK)) {
+        println("Boo, I'm walking this is boring!")
+    }
 }
