@@ -10,7 +10,7 @@
         println("What's your name?")
     }
 
-    fun displayName(name: String) {
+    fun displayName(name: String?) {
         println("Your name is $name")
 
     }
