@@ -1,7 +1,7 @@
 // Car is a CHILD class, that's why we are extending the vehicle
-class Car: Vehicle() {
-    var carName = "Toyota" // VARIAVEL GLOBAL == pertence a uma CLASS LEVEL
-    private var vinNumber = 1234
+class Car(carNameParam: String, vinNumber: Int): Vehicle() { // creating a CONSTRUCTOR with ()
+    var carName = carNameParam // VARIAVEL GLOBAL == pertence a uma CLASS LEVEL
+    var vinNumber = vinNumber
 
     fun showVinNumber(): Int {
         // permitimos que vejamos vinNumber desta funcao,
