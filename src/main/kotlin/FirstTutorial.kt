@@ -1,6 +1,18 @@
 fun main(args: Array<String>) {
-    val person: Person = Person("Ted", 72, 60)
-        println("personName: " + person.name)
-        println("personAge: " + person.age)
-        println("personWeight: " + person.weight)
+    // interface isnt a object
+    // it creates a object for you with the example callback | anonymous inner class
+    speakName(callback = object: ExampleCallback{
+        override fun speakMyName(name: String) {
+            println("myName: $name")
+
+        }
+
+    })
+}
+
+// this object will refer to that object above (ExampleCallback)
+fun speakName(callback: ExampleCallback) {
+    callback.speakMyName("Ted")
+    callback.speakMyName("Ryan")
+    callback.speakMyName("Dylan")
 }
