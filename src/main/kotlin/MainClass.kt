@@ -1,14 +1,16 @@
 import java.awt.Choice
-
-// var usersChoice: Int = WITHDRAW
+val WITHDRAW = 1
+val DEPOSIT = 2
+val EXIT = 3
+var usersChoice: Int = WITHDRAW
 
 fun main(args: Array<String>) {
-    val WITHDRAW = 1
-    val DEPOSIT = 2
-    val EXIT = 3
+    val listOfbanks = listOf(Bank(), Bank(), null)
+    // val bank: Bank = Bank()
+    // doBankActionFromUserInput(bank)
+}
 
-    val bank: Bank = Bank()
-    var usersChoice: Int = WITHDRAW
+fun doBankActionFromUserInput(bank: Bank) {
     while (usersChoice != EXIT) {
         greetUserWithChoices()
         displayAmountInBank(bank)
@@ -16,11 +18,15 @@ fun main(args: Array<String>) {
         if(usersChoice == DEPOSIT) {
             val depositAmount = getDepositAmountFromUser()
             bank.deposit(depositAmount)
+        } else if (usersChoice == WITHDRAW) {
+            val withdrawAmount = getWithdrawAmountFromUser()
+            bank.withdraw(withdrawAmount)
         }
     }
 
 }
-    fun greetUserWithChoices() {
+
+fun greetUserWithChoices() {
     println("Choose what you want. ")
     println("1: Withdraw")
     println("2: Deposit")
@@ -37,7 +43,7 @@ fun getDepositAmountFromUser(): Double {
     return depositAmount
 }
 
-fun getWithdrawFromUser(): Double {
+fun getWithdrawAmountFromUser(): Double {
     print("How much would you like to withdraw?")
     val withdrawAmount = readLine()!!.toDouble()
     return withdrawAmount
