@@ -6,6 +6,10 @@ var usersChoice: Int = WITHDRAW
 
 fun main(args: Array<String>) {
     val listOfbanks = listOf(Bank(), Bank(), null)
+    listOfbanks.forEach { item ->
+        val money = item!!.moneyInBank
+        println("money: $money")
+    }
     // val bank: Bank = Bank()
     // doBankActionFromUserInput(bank)
 }
