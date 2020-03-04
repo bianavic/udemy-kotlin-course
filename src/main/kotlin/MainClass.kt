@@ -1,34 +1,31 @@
-import java.awt.Choice
+import java.util.*
+
 val WITHDRAW = 1
 val DEPOSIT = 2
 val EXIT = 3
 var usersChoice: Int = WITHDRAW
 
 fun main(args: Array<String>) {
-    val listOfbanks = listOf(Bank(), Bank(), null)
-    listOfbanks.forEach { item ->
-            val money = item?.moneyInBank
-            println("money: $money")
+    println("Welcome to Ted's bank")
+    val bank: Bank = Bank()
+    doBankActionFromUserInput(bank)
+}
 
-        // val bank: Bank = Bank()
-        // doBankActionFromUserInput(bank)
+fun doBankActionFromUserInput(bank: Bank) {
+    while (usersChoice != EXIT) {
+        greetUserWithChoices()
+        displayAmountInBank(bank)
+        usersChoice = readLine()!!.toInt()
+        if(usersChoice == DEPOSIT) {
+            val depositAmount = getDepositAmountFromUser()
+            bank.deposit(depositAmount)
+            println("Date: ${bank.getCurrentDate(System.currentTimeMillis())}")
+        } else if (usersChoice == WITHDRAW) {
+            val withdrawAmount = getWithdrawAmountFromUser()
+            bank.withdraw(withdrawAmount)
+        }
     }
-
-//fun doBankActionFromUserInput(bank: Bank) {
-//    while (usersChoice != EXIT) {
-//        greetUserWithChoices()
-//        displayAmountInBank(bank)
-//        usersChoice = readLine()!!.toInt()
-//        if(usersChoice == DEPOSIT) {
-//            val depositAmount = getDepositAmountFromUser()
-//            bank.deposit(depositAmount)
-//        } else if (usersChoice == WITHDRAW) {
-//            val withdrawAmount = getWithdrawAmountFromUser()
-//            bank.withdraw(withdrawAmount)
-//        }
-//    }
-//
-//}
+}
 
     fun greetUserWithChoices() {
         println("Choose what you want. ")
@@ -52,4 +49,3 @@ fun main(args: Array<String>) {
         val withdrawAmount = readLine()!!.toDouble()
         return withdrawAmount
     }
-}
