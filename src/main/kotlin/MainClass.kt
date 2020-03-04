@@ -7,13 +7,9 @@ var usersChoice: Int = WITHDRAW
 fun main(args: Array<String>) {
     val listOfbanks = listOf(Bank(), Bank(), null)
     listOfbanks.forEach { item ->
-        if (item != null) {
-
-            val money = item.moneyInBank
+            val money = item?.moneyInBank
             println("money: $money")
-        } else {
-            println("This is null")
-        }
+
         // val bank: Bank = Bank()
         // doBankActionFromUserInput(bank)
     }
