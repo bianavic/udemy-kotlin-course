@@ -1,4 +1,5 @@
 import java.util.*
+import java.util.function.BiPredicate
 
 val WITHDRAW = 1
 val DEPOSIT = 2
@@ -6,9 +7,15 @@ val EXIT = 3
 var usersChoice: Int = WITHDRAW
 
 fun main(args: Array<String>) {
-    println("Welcome to Ted's bank")
-    val bank: Bank = Bank()
-    doBankActionFromUserInput(bank)
+    val listOfPeople = mutableListOf("Ted", "Billy", "Ryan", "Sam")
+    val grades = mutableListOf(70, 100, 40, 65, 70, 30, 40, 20, 10)
+    val averageGrades = grades.average()
+    println("averageGrades: $averageGrades")
+
+//    println("Welcome to Ted's bank")
+//    val bank: Bank = Bank()
+//    doBankActionFromUserInput(bank)
+
 }
 
 fun doBankActionFromUserInput(bank: Bank) {
